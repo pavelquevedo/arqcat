@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+  		<header>
+  			<% include ../partials/header %>
+  		</header>
+	  <div class="container">
+	  	<div class="row">
+	  		<div class="col-md-6">
+	  			<h2>Editar Sitio</h2>
+	  			<form action="/sitios/actualizar" method="POST">
+	  				<input type="hidden" name="id" value="<%=sitio.id%>">
+	  				<div class="form-group">
+		  				<label for="nombre">Nombre</label>
+		  				<input type="text" class="form-control" name="nombre" value="<%=sitio.nombre%>" >
+		  			</div>
+		  			<div class="form-group">
+		  				<label for="ubicacion">Ubicacion</label>
+		  				<input type="text" class="form-control" name="ubicacion" value="<%=sitio.ubicacion%>" >
+		  			</div>	
+		  			<div class="form-group">
+		  				<input type="submit" class="btn btn-success" value="Actualizar" >
+		  			</div>
+	  			</form>
+	  		</div>
+	  	</div>
+	  </div>
+	</body>
+</html>

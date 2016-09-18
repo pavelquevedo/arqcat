@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   	<% include ../partials/head %>
+  </head>
+  <body>
+  	<header>
+  		<% include ../partials/header %>
+  	</header>
+  	<div class="row">
+  		<div class="col-md-1"></div>
+  		<div class="col-md-10">
+	  		<table class="table table-striped">
+	  			<thead>
+	  				<th>Nombre</th>
+	  				<th>Ubicación</th>
+	  				<th>Acciones</th>
+	  			</thead>
+	  			<tbody>
+	  				<% for (var i = 0; i < sitios.length; i++) { %>
+				  		<tr>
+				  			<td><%=sitios[i].nombre%></td>
+				  			<td><%=sitios[i].ubicacion%></td>
+				  			<td>
+				  				<a class="btn btn-warning" href="/sitios/actualizar/<%=sitios[i].id%>">Editar</a>
+				  				<form style="display:inline;" action="/sitios/eliminar/<%=sitios[i].id%>" method="POST">
+								  <input type="submit" class="btn btn-danger" value="Eliminar">
+								</form>
+				  			</td>
+
+				  		</tr>
+				  	<% } %>		
+	  			</tbody>	
+	  		</table>
+		</div>
+  		<div class="col-md-1"></div>
+  	</div>
+	  
+	</body>
+</html>
